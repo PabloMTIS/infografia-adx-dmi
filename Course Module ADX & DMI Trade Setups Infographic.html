@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Module: ADX & DMI Trade Setups Infographic</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        /* Chosen Color Palette: Brilliant Blues */
+        /* Dark: #03045E */
+        /* Med-Dark: #0077B6 */
+        /* Med-Light: #00B4D8 */
+        /* Light: #90E0EF */
+        /* Very Light: #CAF0F8 */
+        /* Accent (Green): #06D6A0 */
+        /* Accent (Red): #FF6B6B */
+
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 350px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 400px;
+                max-height: 450px;
+            }
+        }
+        .flowchart-step {
+            border: 2px solid #0077B6;
+            color: #03045E;
+            background-color: #CAF0F8;
+            transition: transform 0.2s ease;
+        }
+        .flowchart-step:hover {
+            transform: scale(1.05);
+        }
+        .flowchart-arrow {
+            color: #0077B6;
+            font-size: 1.8rem;
+            line-height: 1;
+        }
+        .card {
+             background-color: white;
+             border-radius: 0.5rem; /* rounded-lg */
+             box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1); /* shadow-md */
+             padding: 1.5rem; /* p-6 */
+             margin-bottom: 1.5rem; /* mb-6 */
+        }
+         .section-title {
+            font-size: 1.875rem; /* text-3xl */
+            font-weight: 700; /* font-bold */
+            color: #03045E; /* Midnight Blue */
+            margin-bottom: 0.5rem; /* mb-2 */
+            text-align: center;
+        }
+        .section-subtitle {
+            color: #0077B6; /* Star Command Blue */
+            margin-bottom: 2rem; /* mb-8 */
+            text-align: center;
+            max-width: 42rem; /* max-w-2xl */
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .highlight {
+            color: #06D6A0; /* Caribbean Green */
+            font-weight: bold;
+        }
+        .warning {
+             color: #FF6B6B; /* Coral Red */
+             font-weight: bold;
+        }
+        .code-block {
+            background-color: #03045E; /* Midnight Blue */
+            color: #CAF0F8; /* Light Sky Blue */
+            padding: 1rem;
+            border-radius: 0.375rem; /* rounded-md */
+            font-family: monospace;
+            white-space: pre-wrap;
+            word-break: break-all;
+            font-size: 0.875rem; /* text-sm */
+        }
+        .nav-link.active {
+            background-color: #0077B6; /* Star Command Blue */
+            color: white;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900">
+
+    <div class="container mx-auto p-4 md:p-8">
+
+        <section id="hero" class="text-center py-12 md:py-16 bg-gradient-to-br from-[#0077B6] to-[#00B4D8] rounded-xl shadow-2xl text-white mb-12">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">Decoding Market Trends with ADX & DMI</h1>
+            <p class="text-lg md:text-xl mb-6 max-w-3xl mx-auto px-4">Your Guide to Understanding and Programming Directional Movement for Trading Setups.</p>
+            <span class="text-5xl md:text-6xl">📈</span>
+        </section>
+
+        <section id="understanding" class="mb-12 scroll-mt-20">
+            <div class="card">
+                <h2 class="section-title">Understanding the Indicators</h2>
+                <p class="section-subtitle">The Directional Movement System, developed by J. Welles Wilder, helps traders assess the strength and direction of a trend. It consists of three key lines.</p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+                    <div class="p-6 bg-[#CAF0F8] rounded-lg shadow-sm border-l-4 border-[#06D6A0]">
+                        <h3 class="text-xl font-bold text-[#03045E] mb-2">+DI (Positive Directional Indicator)</h3>
+                        <p class="text-sm text-[#0077B6]">Measures <span class="highlight">upward price pressure</span>. When +DI is rising and above -DI, it suggests bulls are in control.</p>
+                    </div>
+                    <div class="p-6 bg-[#CAF0F8] rounded-lg shadow-sm border-l-4 border-[#FF6B6B]">
+                        <h3 class="text-xl font-bold text-[#03045E] mb-2">-DI (Negative Directional Indicator)</h3>
+                        <p class="text-sm text-[#0077B6]">Measures <span class="warning">downward price pressure</span>. When -DI is rising and above +DI, it suggests bears are in control.</p>
+                    </div>
+                    <div class="p-6 bg-[#CAF0F8] rounded-lg shadow-sm border-l-4 border-[#0077B6]">
+                        <h3 class="text-xl font-bold text-[#03045E] mb-2">ADX (Average Directional Index)</h3>
+                        <p class="text-sm text-[#0077B6]">Measures <span class="font-bold">trend strength</span> (not direction). A rising ADX indicates a strengthening trend (up or down).</p>
+                    </div>
+                </div>
+                <div class="mt-8">
+                    <h3 class="text-xl font-semibold text-[#03045E] mb-3 text-center">Visualizing ADX & DMI</h3>
+                    <div class="chart-container">
+                        <canvas id="adxDmiChart"></canvas>
+                    </div>
+                     <p class="text-slate-600 mt-4 text-sm">This chart shows a hypothetical example of the +DI (Green), -DI (Red), and ADX (Blue) lines. Observe how the DIs cross each other, signaling potential direction changes, and how the ADX line rises when a strong trend (either up or down) takes hold.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="signals" class="mb-12 scroll-mt-20">
+            <div class="card">
+                <h2 class="section-title">Reading the Signals</h2>
+                <p class="section-subtitle">Combining these lines provides powerful insights into market dynamics. Here's what to look for:</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-white p-6 rounded-lg border-2 border-[#90E0EF] shadow-md">
+                        <h3 class="text-xl font-bold text-[#0077B6] mb-3">📈 DMI Crossovers</h3>
+                        <ul class="list-disc list-inside space-y-2 text-slate-700">
+                            <li><span class="highlight">Bullish Crossover:</span> +DI crosses <span class="font-bold">above</span> -DI. This suggests potential upward momentum.</li>
+                            <li><span class="warning">Bearish Crossover:</span> -DI crosses <span class="font-bold">above</span> +DI. This suggests potential downward momentum.</li>
+                            <li><span class="font-bold">Important:</span> Crossovers alone can be frequent. They are best used with ADX confirmation.</li>
+                        </ul>
+                    </div>
+                     <div class="bg-white p-6 rounded-lg border-2 border-[#90E0EF] shadow-md">
+                        <h3 class="text-xl font-bold text-[#0077B6] mb-3">📊 ADX Levels & Trend Strength</h3>
+                         <ul class="list-disc list-inside space-y-2 text-slate-700">
+                             <li><span class="font-bold">ADX < 20-25:</span> Indicates a <span class="text-slate-500">weak or non-trending</span> market. Crossovers may be unreliable (whipsaws).</li>
+                             <li><span class="font-bold">ADX > 25:</span> Suggests a <span class="highlight">developing or existing trend</span>. This is often used as a filter – only take crossover signals when ADX is above this level.</li>
+                             <li><span class="font-bold">ADX Rising:</span> Shows the trend is <span class="highlight">gaining strength</span>.</li>
+                             <li><span class="font-bold">ADX Falling:</span> Shows the trend is <span class="warning">losing strength</span> or consolidating.</li>
+                         </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="setups" class="mb-12 scroll-mt-20">
+            <div class="card">
+                <h2 class="section-title">Beginner Trade Setups</h2>
+                <p class="section-subtitle">Here are a few example setups combining ADX and DMI. Remember: These are for learning and require rigorous backtesting and risk management!</p>
+
+                <div class="card border-l-8 border-[#06D6A0]">
+                    <h3 class="text-2xl font-semibold text-[#03045E] mb-4">Setup 1: Basic Bullish Trend Entry</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-bold text-lg mb-2">Conditions:</h4>
+                            <ul class="list-decimal list-inside space-y-1 mb-4">
+                                <li>+DI crosses <span class="highlight">above</span> -DI.</li>
+                                <li>ADX is <span class="highlight">above 20</span> (or 25).</li>
+                            </ul>
+                            <h4 class="font-bold text-lg mb-2">Logic:</h4>
+                            <p class="text-sm mb-4">We're looking for an initial sign of an uptrend (the crossover) and confirming it has at least *some* strength to avoid weak signals.</p>
+                             <h4 class="font-bold text-lg mb-2">Programming Snippet Idea:</h4>
+                            <div class="code-block">
+                                if (plusDI_current > minusDI_current &&<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;plusDI_previous <= minusDI_previous &&<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;adx_current > 20) {<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp; // Place Long Entry Order
+                                <br>}
+                            </div>
+                        </div>
+                        <div>
+                             <h4 class="font-bold text-lg mb-2 text-center">Example Chart Area</h4>
+                             <div class="chart-container h-[250px] md:h-[300px]">
+                                <canvas id="setup1Chart"></canvas>
+                             </div>
+                             <p class="text-xs text-slate-500 mt-2 text-center">Look for the Green line (+DI) crossing above the Red (-DI) while the Blue (ADX) is above the 20 line (dashed).</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card border-l-8 border-[#FF6B6B]">
+                    <h3 class="text-2xl font-semibold text-[#03045E] mb-4">Setup 2: Strong Bearish Trend Entry</h3>
+                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-bold text-lg mb-2">Conditions:</h4>
+                            <ul class="list-decimal list-inside space-y-1 mb-4">
+                                <li>-DI is currently <span class="warning">above</span> +DI.</li>
+                                <li>ADX is <span class="warning">above 25</span>.</li>
+                                <li>ADX is <span class="warning">rising</span> (Current ADX > Previous ADX).</li>
+                            </ul>
+                            <h4 class="font-bold text-lg mb-2">Logic:</h4>
+                            <p class="text-sm mb-4">Here, we want to enter an *established* and *strengthening* downtrend. We confirm direction, strength, and increasing momentum.</p>
+                             <h4 class="font-bold text-lg mb-2">Programming Snippet Idea:</h4>
+                            <div class="code-block">
+                                if (minusDI_current > plusDI_current &&<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;adx_current > 25 &&<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;adx_current > adx_previous) {<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp; // Place Short Entry Order
+                                <br>}
+                            </div>
+                        </div>
+                        <div>
+                             <h4 class="font-bold text-lg mb-2 text-center">Example Chart Area</h4>
+                             <div class="chart-container h-[250px] md:h-[300px]">
+                                <canvas id="setup2Chart"></canvas>
+                             </div>
+                             <p class="text-xs text-slate-500 mt-2 text-center">Look for the Red (-DI) above Green (+DI) while Blue (ADX) is above 25 and increasing.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card border-l-8 border-[#0077B6]">
+                    <h3 class="text-2xl font-semibold text-[#03045E] mb-4">Setup 3: Long with Spread & Strength</h3>
+                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-bold text-lg mb-2">Conditions:</h4>
+                            <ul class="list-decimal list-inside space-y-1 mb-4">
+                                <li>+DI crosses <span class="highlight">above</span> -DI.</li>
+                                <li>ADX is <span class="highlight">above 22</span>.</li>
+                                <li>DMI Spread (+DI - -DI) is <span class="highlight">> 5</span> (Math Calc).</li>
+                            </ul>
+                            <h4 class="font-bold text-lg mb-2">Logic:</h4>
+                            <p class="text-sm mb-4">This adds an extra filter. We want a bullish crossover with strength, but we *also* want to see a clear separation between +DI and -DI, indicating stronger conviction.</p>
+                             <h4 class="font-bold text-lg mb-2">Programming Snippet Idea:</h4>
+                            <div class="code-block">
+                                let spread = plusDI_current - minusDI_current;<br>
+                                if (plusDI_current > minusDI_current &&<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;plusDI_previous <= minusDI_previous &&<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;adx_current > 22 &&<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;spread > 5) {<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp; // Place Long Entry Order
+                                <br>}
+                            </div>
+                        </div>
+                        <div>
+                             <h4 class="font-bold text-lg mb-2 text-center">Example Chart Area</h4>
+                             <div class="chart-container h-[250px] md:h-[300px]">
+                                <canvas id="setup3Chart"></canvas>
+                             </div>
+                             <p class="text-xs text-slate-500 mt-2 text-center">Similar to Setup 1, but requires a larger gap between Green and Red lines at the crossover, and ADX above 22.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="coding" class="mb-12 scroll-mt-20">
+            <div class="card">
+                <h2 class="section-title">Coding Your Strategy</h2>
+                <p class="section-subtitle">Translating these ideas into code involves a few core programming concepts you'll master in this course.</p>
+                <div class="flex flex-col md:flex-row justify-around items-center space-y-6 md:space-y-0 md:space-x-4">
+                    <div class="flowchart-step p-4 rounded-lg text-center w-full md:w-1/4 shadow-md">
+                        <span class="text-3xl">📥</span>
+                        <p class="font-semibold mt-2">Data Access</p>
+                        <p class="text-xs">Getting current & past ADX, +DI, -DI values.</p>
+                    </div>
+                    <div class="flowchart-arrow md:hidden">&darr;</div>
+                    <div class="flowchart-arrow hidden md:block">&rarr;</div>
+                    <div class="flowchart-step p-4 rounded-lg text-center w-full md:w-1/4 shadow-md">
+                        <span class="text-3xl">🔀</span>
+                        <p class="font-semibold mt-2">Conditional Logic</p>
+                        <p class="text-xs">Using `if`/`else` to check conditions (crossovers, levels).</p>
+                    </div>
+                     <div class="flowchart-arrow md:hidden">&darr;</div>
+                    <div class="flowchart-arrow hidden md:block">&rarr;</div>
+                    <div class="flowchart-step p-4 rounded-lg text-center w-full md:w-1/4 shadow-md">
+                        <span class="text-3xl">➕</span>
+                        <p class="font-semibold mt-2">Calculations</p>
+                        <p class="text-xs">Finding ADX slope or DMI spread.</p>
+                    </div>
+                     <div class="flowchart-arrow md:hidden">&darr;</div>
+                    <div class="flowchart-arrow hidden md:block">&rarr;</div>
+                    <div class="flowchart-step p-4 rounded-lg text-center w-full md:w-1/4 shadow-md">
+                        <span class="text-3xl">⚙️</span>
+                        <p class="font-semibold mt-2">Order Execution</p>
+                        <p class="text-xs">Defining Buy/Sell actions & exit rules.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="next-steps" class="mb-12 scroll-mt-20">
+            <div class="card bg-[#03045E] text-white">
+                <h2 class="text-3xl font-bold text-white mb-2 text-center">Crucial Next Steps!</h2>
+                <p class="text-slate-300 mb-8 text-center max-w-2xl mx-auto">Learning to code signals is just the beginning. These steps are <span class="font-bold text-[#FFD166]">ESSENTIAL</span> for successful trading.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-center">
+                    <div class="bg-white/10 p-6 rounded-lg border-2 border-[#FF6B6B]">
+                        <h3 class="text-xl font-bold text-[#FF6B6B] mb-3">🛡️ Risk Management</h3>
+                        <p class="text-sm text-slate-200">NEVER trade without a plan! Define your <span class="font-bold">Stop Losses</span> (where to exit if wrong) and <span class="font-bold">Position Sizing</span> (how much to risk per trade). This protects your capital.</p>
+                    </div>
+                    <div class="bg-white/10 p-6 rounded-lg border-2 border-[#06D6A0]">
+                        <h3 class="text-xl font-bold text-[#06D6A0] mb-3">🔬 Backtesting</h3>
+                        <p class="text-sm text-slate-200">ALWAYS test your strategies on historical data <span class="font-bold">before risking real money</span>. Does it work? How often? What are the drawdowns? Programming allows you to do this systematically.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="text-center py-8 text-slate-500 text-sm">
+            <p>&copy; <span id="currentYear"></span> The Indicator Store Training Course. Happy Coding & Trading!</p>
+        </footer>
+    </div>
+
+    <script>
+        function wrapLabel(label, maxWidth) {
+            if (typeof label !== 'string' || label.length <= maxWidth) {
+                return label;
+            }
+            const words = label.split(' ');
+            let currentLine = '';
+            const lines = [];
+            for (const word of words) {
+                if ((currentLine + word).length > maxWidth && currentLine.length > 0) {
+                    lines.push(currentLine.trim());
+                    currentLine = word + ' ';
+                } else {
+                    currentLine += word + ' ';
+                }
+            }
+            lines.push(currentLine.trim());
+            return lines;
+        }
+
+        const tooltipTitleCallback = {
+            plugins: {
+                tooltip: {
+                    callbacks: {
+                        title: function(tooltipItems) {
+                            const item = tooltipItems[0];
+                            let label = item.chart.data.labels[item.dataIndex];
+                            if (Array.isArray(label)) {
+                              return label.join(' ');
+                            } else {
+                              return label;
+                            }
+                        }
+                    }
+                }
+            }
+        };
+
+        const brilliantBluesPalette = {
+            midnightBlue: '#03045E',
+            starCommandBlue: '#0077B6',
+            pacificBlue: '#00B4D8',
+            middleBlue: '#90E0EF',
+            lightSkyBlue: '#CAF0F8',
+            green: '#06D6A0',
+            red: '#FF6B6B'
+        };
+
+        const commonChartOptions = (titleText) => ({
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                title: { display: true, text: titleText, color: brilliantBluesPalette.midnightBlue },
+                legend: { position: 'bottom', labels: { boxWidth: 12, font: {size: 10} } },
+                ...tooltipTitleCallback.plugins
+            },
+            scales: {
+                y: { beginAtZero: false, suggestedMin: 0, suggestedMax: 60, title: {display: true, text: 'Indicator Value'} },
+                x: { title: {display: true, text: 'Time Period'} }
+            }
+        });
+
+        // Generate some hypothetical data for illustration
+        const generateData = (trendType = 'none') => {
+            let pdi = 20, ndi = 20, adx = 15;
+            const plusDI = [], minusDI = [], adxLine = [];
+            const labels = [];
+
+            for (let i = 1; i <= 30; i++) {
+                labels.push(`P${i}`);
+                let pdi_change = (Math.random() - 0.5) * 4;
+                let ndi_change = (Math.random() - 0.5) * 4;
+
+                if (trendType === 'bullish' && i > 5 && i < 20) {
+                    pdi_change += 1.5;
+                    ndi_change -= 0.5;
+                } else if (trendType === 'bearish' && i > 5 && i < 20) {
+                    pdi_change -= 0.5;
+                    ndi_change += 1.5;
+                } else if (trendType === 'strong' && i > 10 && i < 25) {
+                     pdi_change += (pdi > ndi ? 2 : -1);
+                     ndi_change += (ndi > pdi ? 2 : -1);
+                }
+
+                pdi = Math.max(5, Math.min(55, pdi + pdi_change));
+                ndi = Math.max(5, Math.min(55, ndi + ndi_change));
+
+                const spread = Math.abs(pdi - ndi);
+                const sum = pdi + ndi;
+                const dx = sum > 0 ? (spread / sum) * 100 : 0;
+                adx = Math.max(5, Math.min(70, (adx * 13 + dx) / 14 + (Math.random() - 0.4) * 2));
+                
+                if (trendType === 'strong' && i > 10 && i < 25) {
+                   adx = Math.min(70, adx + 1.5);
+                } else if (adx > 25) {
+                   adx -= 0.5;
+                }
+
+                plusDI.push(pdi);
+                minusDI.push(ndi);
+                adxLine.push(adx);
+            }
+            return { labels, plusDI, minusDI, adxLine };
+        };
+
+        const baseData = generateData(); // Base chart
+        const setup1Data = generateData('bullish'); // Setup 1 chart
+        const setup2Data = generateData('bearish'); // Setup 2 chart
+        const setup3Data = generateData('strong'); // Setup 3 chart
+
+        const createChart = (ctx, data, title, adxThreshold = null) => {
+            const datasets = [
+                { label: '+DI', data: data.plusDI, borderColor: brilliantBluesPalette.green, backgroundColor: 'transparent', pointRadius: 1, borderWidth: 2 },
+                { label: '-DI', data: data.minusDI, borderColor: brilliantBluesPalette.red, backgroundColor: 'transparent', pointRadius: 1, borderWidth: 2 },
+                { label: 'ADX', data: data.adxLine, borderColor: brilliantBluesPalette.starCommandBlue, backgroundColor: 'transparent', pointRadius: 1, borderWidth: 3 }
+            ];
+
+            if (adxThreshold) {
+                 datasets.push({
+                    label: `ADX Threshold (${adxThreshold})`,
+                    data: Array(data.labels.length).fill(adxThreshold),
+                    borderColor: brilliantBluesPalette.midnightBlue,
+                    borderWidth: 1,
+                    borderDash: [5, 5], // Dashed line
+                    pointRadius: 0,
+                    fill: false
+                 });
+            }
+
+            new Chart(ctx, {
+                type: 'line',
+                data: { labels: data.labels, datasets: datasets },
+                options: commonChartOptions(title)
+            });
+        };
+
+        // Create Charts
+        createChart(document.getElementById('adxDmiChart').getContext('2d'), baseData, 'ADX & DMI Interaction Example');
+        createChart(document.getElementById('setup1Chart').getContext('2d'), setup1Data, 'Setup 1 Example (+DI Cross, ADX > 20)', 20);
+        createChart(document.getElementById('setup2Chart').getContext('2d'), setup2Data, 'Setup 2 Example (-DI > +DI, ADX > 25)', 25);
+        createChart(document.getElementById('setup3Chart').getContext('2d'), setup3Data, 'Setup 3 Example (+DI Cross, ADX > 22, Spread > 5)', 22);
+
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+    </script>
+</body>
+</html>
